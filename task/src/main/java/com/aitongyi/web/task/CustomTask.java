@@ -6,7 +6,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- *  自定义定时任务
+ * 自定义定时任务
  * Created by admin on 16/8/15.
  */
 @Component
@@ -34,8 +34,8 @@ public class CustomTask {
      *     </table>
      * </pre>
      */
-    @Scheduled(fixedRate = 1000 * 10,initialDelay = 1000 * 5)
-    private void taskRun(){
+    @Scheduled(fixedRate = 1000 * 10, initialDelay = 1000 * 5)
+    private void taskRun() {
         logger.info("CustomTask run ...");
     }
 }

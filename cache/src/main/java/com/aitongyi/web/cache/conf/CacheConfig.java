@@ -18,13 +18,19 @@ import redis.clients.jedis.JedisPoolConfig;
 @EnableAspectJAutoProxy
 @ComponentScan(basePackages = {"com.aitongyi.web.cache"})
 public class CacheConfig {
-    /** redis缓存服务器地址    */
+    /**
+     * redis缓存服务器地址
+     */
     @Value("${redis.host}")
     private String host;
-    /** redis缓存服务器端口    */
+    /**
+     * redis缓存服务器端口
+     */
     @Value("${redis.port}")
     private Integer port;
-    /** redis缓存服务器连接超时时间    */
+    /**
+     * redis缓存服务器连接超时时间
+     */
     @Value("${redis.timeout}")
     private Integer timeout;
 

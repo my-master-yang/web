@@ -1,6 +1,7 @@
 package com.aitongyi.web.back.conf;
 
 //import org.mybatis.spring.annotation.MapperScan;
+
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,16 +19,16 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableScheduling
 @ComponentScan(basePackages =
         {"com.aitongyi.web.back.controller",
-         "com.aitongyi.web.service",
-         "com.aitongyi.web.task"})
+                "com.aitongyi.web.service",
+                "com.aitongyi.web.task"})
 @MapperScan("com.aitongyi.web.dao.mapper")
 public class MvcConfig extends WebMvcConfigurerAdapter {
- 
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
 
     }
- 
+
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
@@ -35,6 +36,7 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
 
     /**
      * jsp视图解析器
+     *
      * @return
      */
     @Bean
@@ -47,14 +49,15 @@ public class MvcConfig extends WebMvcConfigurerAdapter {
     }
 
     /**
-     *  公共部分解析器
+     * 公共部分解析器
+     *
      * @return
      */
-    @Bean(name="multipartResolver")
-	public CommonsMultipartResolver commonsMultipartResolver(){
-		CommonsMultipartResolver common = new CommonsMultipartResolver();
-		common.setMaxUploadSize(10 * 1024 * 1024);//10M
-		return common;
-	}
-    
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver commonsMultipartResolver() {
+        CommonsMultipartResolver common = new CommonsMultipartResolver();
+        common.setMaxUploadSize(10 * 1024 * 1024);//10M
+        return common;
+    }
+
 }

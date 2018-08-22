@@ -45,7 +45,7 @@ public class DatabaseConfig {
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
-        logger.info("mysql url:"+dbUrl);
+        logger.info("mysql url:" + dbUrl);
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setDriverClassName(jdbcDriver);
         dataSource.setUrl(dbUrl);

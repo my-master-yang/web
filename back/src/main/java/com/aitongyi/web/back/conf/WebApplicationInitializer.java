@@ -11,26 +11,28 @@ import javax.servlet.Filter;
  * -- 整个项目的入口
  */
 public class WebApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-	/**
-	 * 获取配置信息
-	 * @return
-	 */
-	@Override
-	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { BackConfig.class, DatabaseConfig.class, SecurityConfig.class, CacheConfig.class};
-	}
-	@Override
-	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { MvcConfig.class };
-	}
+    /**
+     * 获取配置信息
+     *
+     * @return
+     */
+    @Override
+    protected Class<?>[] getRootConfigClasses() {
+        return new Class[]{BackConfig.class, DatabaseConfig.class, SecurityConfig.class, CacheConfig.class};
+    }
 
-	@Override
-	protected String[] getServletMappings() {
-		return new String[] { "/" };
-	}
+    @Override
+    protected Class<?>[] getServletConfigClasses() {
+        return new Class[]{MvcConfig.class};
+    }
 
-	@Override
-	protected Filter[] getServletFilters() {
-		return null;
-	}
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+
+    @Override
+    protected Filter[] getServletFilters() {
+        return null;
+    }
 }

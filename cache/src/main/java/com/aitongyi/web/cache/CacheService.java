@@ -16,16 +16,17 @@ public class CacheService {
 
     /**
      * 设置缓存对象
+     *
      * @param key
      * @param value
      */
-    public void set(String key,String value){
+    public void set(String key, String value) {
         Jedis jedis = null;
-        try{
+        try {
             jedis = jedisPool.getResource();
             jedis.set(key, value);
-        }finally{
-            if(jedis != null){
+        } finally {
+            if (jedis != null) {
                 jedis.close();
             }
         }
@@ -33,16 +34,17 @@ public class CacheService {
 
     /**
      * 获取缓存对象
+     *
      * @param key
      * @return
      */
-    public String get(String key){
+    public String get(String key) {
         Jedis jedis = null;
-        try{
+        try {
             jedis = jedisPool.getResource();
             return jedis.get(key);
-        }finally{
-            if(jedis != null){
+        } finally {
+            if (jedis != null) {
                 jedis.close();
             }
         }
@@ -50,15 +52,16 @@ public class CacheService {
 
     /**
      * 删除缓存对象
+     *
      * @param key
      */
-    public void del(String key){
+    public void del(String key) {
         Jedis jedis = null;
-        try{
+        try {
             jedis = jedisPool.getResource();
             jedis.del(key);
-        }finally{
-            if(jedis != null){
+        } finally {
+            if (jedis != null) {
                 jedis.close();
             }
         }

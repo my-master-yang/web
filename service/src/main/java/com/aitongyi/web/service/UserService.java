@@ -14,13 +14,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 用户服务接口
- *
  */
 @Service
 public class UserService {
     private static final Logger logger = LoggerFactory.getLogger(UserService.class);
-   @Autowired
-   private UserMapper userMapper;
+    @Autowired
+    private UserMapper userMapper;
 
 
     @Transactional
@@ -37,6 +36,6 @@ public class UserService {
 
     private void getError() {
         int i = 1 / 0;
-        logger.info("i:{}" , i);
+        logger.info("i:{}", i);
     }
 }

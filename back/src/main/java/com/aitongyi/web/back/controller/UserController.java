@@ -32,7 +32,7 @@ public class UserController {
     @PreAuthorize("isAuthenticated()")// isAuthenticated 如果用户不是匿名用户就返回true
     public String showHomePage() {
         try {
-            
+
             User user = userService.loadUserByUsername("admin");
 
 //            测试缓存服务
@@ -42,11 +42,11 @@ public class UserController {
             String userStr = cacheService.get(CacheKey.LOGIN_USER_KEY + user.getId());
 //            进行反序列化
             User u = JSON.parseObject(userStr, User.class);
-            if(u != null){
+            if (u != null) {
                 logger.info("user:{}", u);
             }
             logger.info("load user ");
-        }catch (Exception e){
+        } catch (Exception e) {
             logger.error(e.getLocalizedMessage(), e);
         }
 
