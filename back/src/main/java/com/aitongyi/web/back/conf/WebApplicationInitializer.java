@@ -20,6 +20,7 @@ public class WebApplicationInitializer extends AbstractAnnotationConfigDispatche
     protected Class<?>[] getRootConfigClasses() {
         return new Class[]{BackConfig.class, DatabaseConfig.class, SecurityConfig.class, CacheConfig.class};
     }
+
     
     @Override
     protected Class<?>[] getServletConfigClasses() {
